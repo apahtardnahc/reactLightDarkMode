@@ -1,0 +1,169 @@
+:root {
+  /* Light mode color scheme */
+  --light-bg: #ffffff;
+  --light-surface: #f8fafc;
+  --light-primary: #3b9cf6d3;
+  --light-primary-hover: #2563eb;
+  --light-text: #1e293b;
+  --light-text-secondary: #64748b;
+  --light-border: #e2e8f0;
+  --light-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Dark mode color scheme */
+  --dark-bg: #0f172a;
+  --dark-surface: #1e293b;
+  --dark-primary: #60a5fa;
+  --dark-primary-hover: #3b82f6;
+  --dark-text: #f1f5f9;
+  --dark-text-secondary: #94a3b8;
+  --dark-border: #334155;
+  --dark-shadow: rgba(0, 0, 0, 0.3);
+
+  /* Common variables */
+  --border-radius: 0.75rem;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+}
+
+.layout {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  transition: var(--transition);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+  max-width: 320px;
+}
+
+@media (min-width: 640px) {
+  .buttons {
+    flex-direction: row;
+    max-width: 640px;
+  }
+}
+
+.light {
+  background: linear-gradient(
+    135deg,
+    var(--light-bg) 0%,
+    var(--light-surface) 100%
+  );
+  color: var(--light-text);
+}
+
+.light .button {
+  background: var(--light-bg);
+  color: var(--light-text);
+  border: 2px solid var(--light-border);
+  box-shadow: 0 4px 6px var(--light-shadow);
+  transition: var(--transition);
+}
+
+.light .button:hover {
+  background: var(--light-primary);
+  color: white;
+  border-color: var(--light-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px var(--light-shadow);
+}
+
+.light .button.active {
+  background: var(--light-primary);
+  color: white;
+  border-color: var(--light-primary);
+}
+
+.dark {
+  background: linear-gradient(
+    135deg,
+    var(--dark-bg) 0%,
+    var(--dark-surface) 100%
+  );
+  color: var(--dark-text);
+}
+
+.dark .button {
+  background: var(--dark-surface);
+  color: var(--dark-text);
+  border: 2px solid var(--dark-border);
+  box-shadow: 0 4px 6px var(--dark-shadow);
+  transition: var(--transition);
+}
+
+.dark .button:hover {
+  background: var(--dark-primary);
+  color: var(--dark-bg);
+  border-color: var(--dark-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px var(--dark-shadow);
+}
+
+.dark .button.active {
+  background: var(--dark-primary);
+  color: var(--dark-bg);
+  border-color: var(--dark-primary);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-width: 140px;
+  text-decoration: none;
+}
+
+.button img {
+  width: 24px;
+  height: 24px;
+  transition: var(--transition);
+}
+
+.button:hover img {
+  transform: scale(1.1);
+}
+
+/* Add a subtle animation for theme switching */
+.layout {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Add focus styles for accessibility */
+.button:focus-visible {
+  outline: 3px solid var(--light-primary);
+  outline-offset: 2px;
+}
+
+.dark .button:focus-visible {
+  outline-color: var(--dark-primary);
+}

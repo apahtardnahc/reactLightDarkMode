@@ -31,7 +31,7 @@ React application that allows users to switch between light and dark themes.
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/apahtardnahc/reactLightDarkMode.git
 cd reactLightDarkMode
 ```
 
@@ -66,48 +66,6 @@ src/
 ├── index.css        # Global styles
 └── main.tsx         # Application entry point
 ```
-
-## Screenshots
-
-### Light Theme
-
-![Light Theme](./screenshots/light-theme.png)
-
-### Dark Theme
-
-![Dark Theme](./screenshots/dark-theme.png)
-
-### How to Add Images to README
-
-To add images to your README.md file:
-
-1. **Create a screenshots folder** in your project root:
-
-```bash
-mkdir screenshots
-```
-
-2. **Add your images** to the screenshots folder (PNG, JPG, GIF formats work best)
-
-3. **Reference images in markdown** using this syntax:
-
-```markdown
-![Alt text for the image](./path/to/image.png)
-```
-
-4. **For GitHub repositories**, you can also use absolute URLs:
-
-```markdown
-![Alt text](https://github.com/username/repo/raw/main/path/to/image.png)
-```
-
-**Tips for README images:**
-
-- Use descriptive alt text for accessibility
-- Keep image files reasonably sized (under 2MB)
-- Use PNG for screenshots with text, JPG for photos
-- Maintain consistent aspect ratios
-- Consider creating a `docs/` or `assets/` folder for organization
 
 ## Usage
 

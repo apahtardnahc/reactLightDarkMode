@@ -1,73 +1,118 @@
-# React + TypeScript + Vite
+## Screenshots
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Light Theme
 
-Currently, two official plugins are available:
+![Light Theme](./screenshots/light-theme.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Dark Theme
 
-## React Compiler
+![Dark Theme](./screenshots/dark-theme.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# React Light/Dark Mode Theme Switcher
 
-## Expanding the ESLint configuration
+React application that allows users to switch between light and dark themes.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Technologies Used
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React** - UI library
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Fast build tool and development server
+- **CSS** - Modern styling with custom properties and animations
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+
+- Node.js (version 16 or higher)
+- npm
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd reactLightDarkMode
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## Project Structure
+
+```
+src/
+├── assets/          # Static assets (icons, images)
+├── App.tsx          # Main application component
+├── App.css          # Application styles
+├── index.css        # Global styles
+└── main.tsx         # Application entry point
+```
+
+## Screenshots
+
+### Light Theme
+
+![Light Theme](./screenshots/light-theme.png)
+
+### Dark Theme
+
+![Dark Theme](./screenshots/dark-theme.png)
+
+### How to Add Images to README
+
+To add images to your README.md file:
+
+1. **Create a screenshots folder** in your project root:
+
+```bash
+mkdir screenshots
+```
+
+2. **Add your images** to the screenshots folder (PNG, JPG, GIF formats work best)
+
+3. **Reference images in markdown** using this syntax:
+
+```markdown
+![Alt text for the image](./path/to/image.png)
+```
+
+4. **For GitHub repositories**, you can also use absolute URLs:
+
+```markdown
+![Alt text](https://github.com/username/repo/raw/main/path/to/image.png)
+```
+
+**Tips for README images:**
+
+- Use descriptive alt text for accessibility
+- Keep image files reasonably sized (under 2MB)
+- Use PNG for screenshots with text, JPG for photos
+- Maintain consistent aspect ratios
+- Consider creating a `docs/` or `assets/` folder for organization
+
+## Usage
+
+Click on either the "Light Theme" or "Dark Theme" button to switch between color schemes. The active theme will be highlighted, and smooth transitions will animate the change.
+
+## Customization
+
+The theme colors are defined using CSS custom properties in `App.css`. You can easily modify the color scheme by updating the CSS variables in the `:root` selector.
